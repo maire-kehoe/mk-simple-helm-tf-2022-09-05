@@ -19,15 +19,15 @@ variable "kp_integration_name" {
 variable "app_repo" {
 }
 
+variable "app_repo_branch" {
+}
+
 variable "pipeline_repo" {
     type        = string
     description = "The repository url containing pipeline definitions for Simple Helm Toolchain."
 }
 
-variable "pipeline_branch" {
-  type        = string
-  description = "The branch within pipeline definitions repository for Simple Helm Toolchain."
-  default     = "main"
+variable "pipeline_repo_branch" {
 }
 
 variable "pipeline_path" {
@@ -37,6 +37,9 @@ variable "pipeline_path" {
 }
 
 variable "tekton_tasks_catalog_repo" {
+}
+
+variable "definitions_branch" {
 }
 
 variable "pr_pipeline_scm_trigger_type" {

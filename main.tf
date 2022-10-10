@@ -42,9 +42,13 @@ module "pipeline-ci" {
   cluster_region            = var.cluster_region
   registry_namespace        = var.registry_namespace
   registry_region           = var.registry_region
+  commons_hosted_region     = var.commons_hosted_region
   app_repo                  = module.repositories.app_repo_url 
+  app_repo_branch           = var.app_repo_branch
   pipeline_repo             = module.repositories.pipeline_repo_url
+  pipeline_repo_branch      = var.pipeline_repo_branch
   tekton_tasks_catalog_repo = module.repositories.tekton_tasks_catalog_repo_url
+  definitions_branch        = var.definitions_branch
   kp_integration_name       = module.integrations.keyprotect_integration_name
 }
 
@@ -65,8 +69,11 @@ module "pipeline-pr" {
   resource_group            = var.resource_group
   app_name                  = var.app_name
   app_repo                  = module.repositories.app_repo_url 
+  app_repo_branch           = var.app_repo_branch
   pipeline_repo             = module.repositories.pipeline_repo_url
+  pipeline_repo_branch      = var.pipeline_repo_branch
   tekton_tasks_catalog_repo = module.repositories.tekton_tasks_catalog_repo_url  
+  definitions_branch        = var.definitions_branch
   kp_integration_name       = module.integrations.keyprotect_integration_name
 }
 

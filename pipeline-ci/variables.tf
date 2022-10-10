@@ -37,10 +37,22 @@ variable "kp_integration_name" {
 variable "app_repo" {
 }
 
+variable "app_repo_branch" {
+}
+
 variable "pipeline_repo" {
 }
 
+variable "pipeline_repo_branch" {
+}
+
 variable "tekton_tasks_catalog_repo" {
+}
+
+variable "definitions_branch" {
+}
+
+variable "commons_hosted_region" {
 }
 
 variable "ci_pipeline_manual_trigger_name" {

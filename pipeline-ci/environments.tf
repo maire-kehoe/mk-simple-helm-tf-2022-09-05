@@ -12,13 +12,6 @@ resource "ibm_cd_tekton_pipeline_property" "ci_env_app_name" {
   pipeline_id    = var.pipeline_id         
 }
 
-resource "ibm_cd_tekton_pipeline_property" "ci_env_branch" {
-  name           = "branch"
-  type           = "text"
-  value          = "main"
-  pipeline_id    = var.pipeline_id         
-}
-
 resource "ibm_cd_tekton_pipeline_property" "ci_env_cluster_name" {
   name           = "cluster-name"
   type           = "text"
@@ -29,7 +22,7 @@ resource "ibm_cd_tekton_pipeline_property" "ci_env_cluster_name" {
 resource "ibm_cd_tekton_pipeline_property" "ci_env_commons_hosted_region" {
   name           = "commons-hosted-region"
   type           = "text"
-  value          = "https://raw.githubusercontent.com/open-toolchain/commons/master"
+  value          = var.commons_hosted_region
   pipeline_id    = var.pipeline_id         
 }
 
