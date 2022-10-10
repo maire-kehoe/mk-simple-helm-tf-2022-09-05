@@ -110,3 +110,11 @@ resource "ibm_cd_tekton_pipeline_trigger" "ci_pipeline_manual_trigger" {
   name            = "manual-run"
   event_listener  = "manual-run"
 }
+
+resource "ibm_cd_tekton_pipeline_property" "ci_pipeline_manual_trigger_branch" {
+  pipeline_id    = ibm_cd_tekton_pipeline.ci_pipeline_instance.pipeline_id
+  trigger_id     = ibm_cd_tekton_pipeline_trigger.ci_pipeline_manual_trigger.trigger_id
+  name           = "branch"
+  type           = "text"
+  value          = var.app_repo_branch
+}
