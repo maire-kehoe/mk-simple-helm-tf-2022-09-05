@@ -54,12 +54,12 @@ Run `terraform destroy` to clean up and destroy all the resources created for th
 
 | Name | Description | Type | Required |
 |------|-------------|------|---------|
-| ibmcloud\_api\_key | IBM Cloud API key required by the terraform provider to interact with IBM Cloud | `string` | true |
+| ibm\_cloud\_api\_key | IBM Cloud API key required by the terraform provider to interact with IBM Cloud | `string` | true |
 | resource_group | Name of the resource group that the toolchain will belong to. | `string` | true |
 | region | IBM Cloud Region in which toolchain will be created. Defaults to `us-south` | `string` | true |
 | toolchain_name | Name of the toolchain | `string` | false |
 | toolchain_description | Description of the toolchain | `string` | false |
-| ibmcloud\_api | IBM Cloud API Endpoint that will be used by the CI/PR Pipelies to interact with IBM Cloud Services | `string` | false |
+| ibm\_cloud\_api | IBM Cloud API Endpoint that will be used by the CI/PR Pipelies to interact with IBM Cloud Services | `string` | false |
 | app_name | Name of the application that will be deployed by the CI Pipeline | `string` | false |
 | app_image_name | Name of the application container image that will be create by the CI Pipeline | `string` | false |
 | cluster_name | Name of the IKS Cluster where the application container image will be deployed | `string` | true |

@@ -4,12 +4,12 @@ variable "resource_group" {
   default     = "Default"
 }
 
-variable "ibm_cloud_api_key" {
+variable "ibmcloud_api_key" {
   type        = string
   description = "IBM Cloud API KEY to fetch cloud resources"
 }
 
-variable "ibm_cloud_api" {
+variable "ibmcloud_api" {
   type        = string
   description = "IBM Cloud API Endpoint"
   default     = "https://cloud.ibm.com"

@@ -10,7 +10,7 @@ variable "app_name" {
 variable "region" {
 }
 
-variable "ibm_cloud_api_key" {
+variable "ibmcloud_api_key" {
 }
 
 variable "kp_integration_name" {
@@ -20,6 +20,9 @@ variable "app_repo" {
 }
 
 variable "app_repo_branch" {
+}
+
+variable "ibmcloud_api" {
 }
 
 variable "pipeline_repo" {
@@ -51,7 +54,7 @@ variable "pr_pipeline_scm_trigger_type" {
 variable "pr_pipeline_scm_trigger_name" {
   type        = string
   description = "The name of SCM Trigger for PR Pipeline as defined in tekton definition."
-  default     = "SCM Trigger"
+  default     = "Git PR Trigger"
 }
 
 variable "pr_pipeline_scm_trigger_listener_name" {

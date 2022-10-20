@@ -96,8 +96,8 @@ resource "ibm_cd_tekton_pipeline_trigger" "ci_pipeline_scm_trigger" {
     branch  = var.app_repo_branch
   }
   events {
-    push                = false
-    pull_request_closed = true
+    push                = true
+    pull_request_closed = false
     pull_request        = false
   } 
   disabled         = var.ci_pipeline_scm_trigger_disabled

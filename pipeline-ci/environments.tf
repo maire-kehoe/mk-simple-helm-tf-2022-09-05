@@ -75,16 +75,9 @@ resource "ibm_cd_tekton_pipeline_property" "ci_env_toolchain_apikey" {
   pipeline_id    = var.pipeline_id         
 }
 
-resource "ibm_cd_tekton_pipeline_property" "ci_env_repository" {
-  name           = "repository"
-  type           = "text"
-  value          = var.app_repo
-  pipeline_id    = var.pipeline_id         
-}
-
 resource "ibm_cd_tekton_pipeline_property" "ci_env_ibmcloud-api" {
   name           = "ibmcloud-api"
   type           = "text"
-  value          = "https://cloud.ibm.com"
+  value          = var.ibmcloud_api
   pipeline_id    = var.pipeline_id         
 }

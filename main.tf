@@ -12,7 +12,7 @@ module "repositories" {
   source                          = "./repositories"
   toolchain_id                    = ibm_cd_toolchain.toolchain_instance.id
   resource_group                  = data.ibm_resource_group.resource_group.id  
-  ibm_cloud_api_key               = var.ibm_cloud_api_key
+  ibmcloud_api_key                = var.ibmcloud_api_key
   region                          = var.region  
   app_repo                        = var.app_repo
   pipeline_repo                   = var.pipeline_repo
@@ -31,7 +31,8 @@ resource "ibm_cd_toolchain_tool_pipeline" "ci_pipeline" {
 module "pipeline-ci" {
   source                    = "./pipeline-ci"
   depends_on                = [ module.repositories ]
-  ibm_cloud_api_key         = var.ibm_cloud_api_key
+  ibmcloud_api_key          = var.ibmcloud_api_key
+  ibmcloud_api              = var.ibmcloud_api
   region                    = var.region
   pipeline_id               = split("/", ibm_cd_toolchain_tool_pipeline.ci_pipeline.id)[1]
   resource_group            = var.resource_group
@@ -63,7 +64,8 @@ resource "ibm_cd_toolchain_tool_pipeline" "pr_pipeline" {
 module "pipeline-pr" {
   source                    = "./pipeline-pr"
   depends_on                = [ module.repositories ]
-  ibm_cloud_api_key         = var.ibm_cloud_api_key
+  ibmcloud_api_key          = var.ibmcloud_api_key
+  ibmcloud_api              = var.ibmcloud_api
   region                    = var.region  
   pipeline_id               = split("/", ibm_cd_toolchain_tool_pipeline.pr_pipeline.id)[1]
   resource_group            = var.resource_group
@@ -82,7 +84,7 @@ module "services" {
   kp_name                     = var.kp_name
   kp_region                   = var.kp_region
   region                      = var.region
-  ibm_cloud_api               = var.ibm_cloud_api   
+  ibmcloud_api                = var.ibmcloud_api
   cluster_name                = var.cluster_name
   cluster_namespace           = var.cluster_namespace
   cluster_region              = var.cluster_region

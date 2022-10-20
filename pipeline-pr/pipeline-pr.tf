@@ -69,8 +69,8 @@ resource "ibm_cd_tekton_pipeline_trigger" "pr_pipeline_scm_trigger" {
     branch    = var.app_repo_branch
   }
   events {
-    push                = true
-    pull_request_closed = true
+    push                = false
+    pull_request_closed = false
     pull_request        = true
   } 
   max_concurrent_runs = var.pr_pipeline_max_concurrent_runs
